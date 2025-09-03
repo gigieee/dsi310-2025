@@ -3,12 +3,12 @@
 ## 📊 Diagrams
 
 ### 1. Chinook (Original ER/Class Diagram)
-![Chinook Diagram](images/chinook.png)
+<img src="images/chinook.png" alt="Chinook Diagram" width="600"/>
 
 ### 2. Northwind (Original ER/Class Diagram)
-![Northwind Diagram](images/northwind.png)
+<img src="images/northwind.png" alt="Northwind Diagram" width="600"/>
 
 ### 3. Unified Kimball-style Star Schema
-![Star Schema](images/starschema.png)
+<img src="images/starschema.png" alt="Star Schema" width="600"/>
 
 ---
