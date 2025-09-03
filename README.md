@@ -29,5 +29,6 @@ JOIN DimDate d           ON fs.DateId = d.DateId
 JOIN DimBusinessUnit bu  ON fs.BusinessUnitId = bu.BusinessUnitId
 GROUP BY d.Year, d.Month, bu.BusinessUnitName
 ORDER BY d.Year, d.Month, bu.BusinessUnitName;
+```
 ### Results
 <img src="images/Q1-result.png" alt="Q1 Result" width="400"/>
