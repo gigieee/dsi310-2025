@@ -30,5 +30,22 @@ JOIN DimBusinessUnit bu  ON fs.BusinessUnitId = bu.BusinessUnitId
 GROUP BY d.Year, d.Month, bu.BusinessUnitName
 ORDER BY d.Year, d.Month, bu.BusinessUnitName;
 ```
-### Results
+#### Results
 <img src="images/Q1-result.png" alt="Q1 Result" width="400"/>
+
+### 2). Estimate monthly expense for each business unit?
+> ประมาณ “ค่าใช้จ่าย” รายเดือนของแต่ละ BU — ใช้ FreightAllocated เป็น proxy (หากใช้ Northwind)
+ถ้าใช้เฉพาะ Chinook จะเป็นศูนย์เพราะไม่มีค่าส่งในชุดข้อมูล
+
+```sql
+SELECT
+  d.Year, d.Month, bu.BusinessUnitName,
+  SUM(COALESCE(fs.FreightAllocated,0)) AS MonthlyFreightExpense
+FROM FactSales fs
+JOIN DimDate d          ON fs.DateId = d.DateId
+JOIN DimBusinessUnit bu ON fs.BusinessUnitId = bu.BusinessUnitId
+GROUP BY d.Year, d.Month, bu.BusinessUnitName
+ORDER BY d.Year, d.Month, bu.BusinessUnitName;
+```
+#### Results
+<img src="images/Q2-result.png" alt="Q1 Result" width="400"/>
